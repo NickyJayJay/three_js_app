@@ -1,0 +1,58 @@
+.model-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid rgba(74, 85, 104, 0.2);
+  border-radius: 8px;
+  background: radial-gradient(ellipse at center, #2a2a2a 0%, #1a1a1a 100%);
+  position: relative;
+  cursor: default;
+}
+
+.canvas-container canvas {
+  border-radius: 8px;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.canvas-container * {
+  cursor: inherit;
+}
+
+@keyframes selectionPulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes hoverGlow {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.entity-hover {
+  animation: hoverGlow 1s ease-in-out infinite;
+}
+
+.entity-selected {
+  animation: selectionPulse 2s ease-in-out infinite;
+}
